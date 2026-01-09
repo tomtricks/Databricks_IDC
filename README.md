@@ -50,15 +50,16 @@ Convert learning into practical output
 📂 How this repo is organized
 
 ├── Day-01/
-│   ├── notes.md
-│   └── resources.md
-├── Day-02/
-│   ├── notes.md
-│   └── examples/
-├── ...
-├── resources/
-│   └── useful-links.md
-└── README.md
+│   ├── notes.md  
+│   └── resources.md  
+├── Day-02/  
+│   ├── notes.md  
+│   └── examples/  
+├── ...  
+├── resources/  
+│   └── useful-links.md  
+└── README.md  
+
 
 Each day typically includes:
 
