@@ -74,6 +74,7 @@ df.filter(df.price > 1000).show()
 - Operations are lazy, meaning execution happens only when required (like `.show()`)
 ```
 
+![day 1 code image](day1 code .png)
 
 <img width="960" height="807" alt="dbc-80312414-db61 cloud databricks com_editor_notebooks_4493394183750180_o=7474647608326145" src="https://github.com/user-attachments/assets/47db6c69-3087-41f2-9386-bf92ac584b82" />
 
