@@ -10,7 +10,7 @@
   - Less boilerplate, more productivity
   - Easy scalability for big data workloads
 
-👉 **Databricks sits in the sweet spot between performance and developer experience.**
+**Databricks sits in the sweet spot between performance and developer experience.**
 
 ## 2️. Lakehouse Architecture – Basics
 
@@ -57,7 +57,7 @@ This made it clear that Databricks is built for production-scale systems.
 
 ---
 
-## 📝 Hands-on Practice
+## Hands-on Practice
 
 ```python
 # Create simple DataFrame
