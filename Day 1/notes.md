@@ -1,6 +1,6 @@
 # What I Learned
 
-## 1️⃣ Why Databricks over Pandas / Hadoop?
+## 1️. Why Databricks over Pandas / Hadoop?
 
 - **Pandas** works well for small, local datasets but struggles with large-scale data
 - **Hadoop (MapReduce)** is powerful but complex and slow to develop with
@@ -12,7 +12,7 @@
 
 👉 **Databricks sits in the sweet spot between performance and developer experience.**
 
-## 2️⃣ Lakehouse Architecture – Basics
+## 2️. Lakehouse Architecture – Basics
 
 Combines the best of:
 - **Data Lakes** (cheap storage, scalability)
@@ -25,7 +25,7 @@ Combines the best of:
 
 Uses **Delta Lake** to add reliability (ACID transactions) on top of cloud storage.
 
-## 3️⃣ Databricks Workspace Overview
+## 3️. Databricks Workspace Overview
 
 Understood the core components of the UI:
 - **Workspace** → Where notebooks, folders, and repos live
@@ -34,7 +34,7 @@ Understood the core components of the UI:
 
 This helped me understand where code runs and where data lives.
 
-## 4️⃣ Industry Use Cases
+## 4️. Industry Use Cases
 
 Real-world companies using Databricks:
 - **Netflix** → Data processing, recommendations
@@ -45,13 +45,13 @@ This made it clear that Databricks is built for production-scale systems.
 
 ---
 
-## 🛠️ Tasks Completed
+## Tasks Completed
 
 * Created Databricks Community Edition account  
 * Explored:
   - Workspace
   - Compute
-  -   
+  - Data Explorer 
 * Created my first Databricks notebook  
 * Ran basic PySpark commands successfully
 
