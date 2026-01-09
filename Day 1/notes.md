@@ -72,11 +72,14 @@ df.filter(df.price > 1000).show()
 **Key takeaway from this:**
 - Spark DataFrames feel similar to Pandas but are distributed by design
 - Operations are lazy, meaning execution happens only when required (like `.show()`)
+--- 
 
 
 
 
 ![day 1 code image](day1-code.png)
+
+#DatabricksWithIDC
 
 
 
