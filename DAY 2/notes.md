@@ -65,7 +65,7 @@ For a complete list of available magics in your environment, you can run the %ls
 
 Tasks Completed
 
-Uploaded a sample e-commerce CSV file  
+Uploaded a sample e-commerce CSV file    
 Read the file into a Spark DataFrame  
 Performed basic operations:  
 select, filter, groupBy, orderBy  
