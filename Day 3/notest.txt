@@ -37,5 +37,7 @@ Hands-on
 
 ![day 3 code image](day3-code.png)
 
+#DatabricksWithIDC
+
 
 
