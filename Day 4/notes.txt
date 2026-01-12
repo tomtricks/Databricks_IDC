@@ -199,14 +199,10 @@ Incremental ETL pipelines
 
 ---
 
-6️⃣ How Delta Fits Into What You’re Learning
-
-Your learning flow now looks like this:
 
 CSV → Parquet → Spark → Delta Lake → Reliable Data Platform
 
 Delta is the bridge between learning Spark and doing real-world Data Engineering.
-
 
 
 ![day 2 code image](day2-code.png)
