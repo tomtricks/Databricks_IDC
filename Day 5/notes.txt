@@ -1,0 +1,30 @@
+Day 5 - Delta Lake Advanced
+1. Time Travel (Version History)
+Delta Lake maintains a transaction log that tracks every change made to a table, assigning each a unique version number and timestamp. 
+Audit History: Use DESCRIBE HISTORY table_name to view all previous operations, including who performed them and when.
+Querying Past Data: Access older snapshots using the VERSION AS OF or TIMESTAMP AS OF clauses.
+SQL Example: SELECT * FROM table VERSION AS OF 5.
+Restoration: Use the RESTORE TABLE command to revert an entire table to a previous state. 
+
+
+2. MERGE Operations (Upserts)
+The MERGE command allows you to simultaneously update existing records and insert new ones based on a join condition, commonly known as an "upsert". 
+Efficiency: It is significantly faster than overwriting entire partitions because it only modifies files containing relevant records.
+Advanced Logic: You can include multiple WHEN MATCHED or WHEN NOT MATCHED clauses with additional conditions for complex synchronization.
+SCD Support: It is a primary tool for implementing Slowly Changing Dimensions (SCD Type 1 and Type 2). 
+
+3. OPTIMIZE & Z-ORDER
+These commands are used to physically reorganize data for faster query performance. 
+OPTIMIZE: Performs "compaction" by merging many small files into larger, more efficient Parquet files (typically targeting 1GB).
+Z-ORDER: A multi-dimensional clustering technique that co-locates related information in the same files.
+Benefit: Dramatically improves "data skipping" by narrowing the min/max statistics for specified columns, allowing Spark to ignore irrelevant files during queries.
+Automation: Managed platforms like Databricks often offer Auto-Compaction and Optimized Writes to handle these tasks automatically.
+
+4. VACUUM for Cleanup
+Because Delta Lake retains historical data files for time travel, storage costs can accumulate over time. 
+Function: VACUUM physically deletes data files that are no longer referenced by the current table and are older than a specific retention period.
+Default Retention: The default retention period is 7 days (168 hours).
+Trade-off: Once a version is vacuumed, you can no longer "time travel" back to it.
+Safety: By default, Delta Lake prevents vacuuming with a retention of 0 hours to avoid accidental data loss for active concurrent transactions. 
+
+#DatabricksWithIDC
