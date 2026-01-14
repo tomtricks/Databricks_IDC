@@ -1,0 +1,17 @@
+Medallion Architecture
+
+Bronze (Raw Data):
+Immutability: Land data AS-IS, keeping a perfect history of source systems.
+Metadata: Add load timestamps, source IDs, and process info.
+Schema Enforcement: Use schema-on-read or defined contracts to capture changes (schema drift).
+Reprocessing: Enables replaying transformations without hitting source systems.
+Silver (Cleaned/Enriched):
+Data Quality: Deduplicate, standardize formats (e.g., phone numbers), enforce data types.
+Enrichment: Apply basic joins, calculate derived fields (e.g., age from DOB).
+Data Modeling: Can use Data Vault or conform to a single source of truth (SSOT).
+Trustworthy Base: Becomes the reliable foundation for all downstream use.
+Gold (Business-Ready):
+Aggregation: Create fact/dimension tables (star/snowflake schemas).
+Optimization: Denormalized, read-optimized formats (e.g., Delta Lake).
+Use-Case Specific: Tailored for BI dashboards, reporting, or ML.
+Shared Definitions: Agree on KPIs and business terms across teams. 
