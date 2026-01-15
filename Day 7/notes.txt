@@ -1,0 +1,22 @@
+Workflows & Job Orchestration
+1.Databricks Jobs vs notebooks
+*Databricks Notebooks are for interactive coding (EDA, development), 
+*while Databricks Jobs are for scheduling and orchestrating those notebooks (or other scripts/tasks) into automated, production-ready workflows (like ETL pipelines), managing dependencies, clusters, and notifications for reliable, recurring execution.
+
+2.Multi-Task Workflows
+Databricks Jobs excel at defining multi-task workflows, allowing you to combine different data processing stages into a single, cohesive unit. A workflow can specify the execution order and dependencies between various tasks, which can include: 
+Notebooks
+Python scripts (wheel files)
+JAR files
+Spark Submit jobs
+Delta Live Tables pipelines
+
+3.Parameters & scheduling
+Parameters: You can define input parameters when creating a job or triggering a specific run. These parameters are accessible within the task's code (e.g., in a notebook via dbutils.widgets) and can be used to control data sources, processing logic, and other variables.
+Scheduling: Jobs can be scheduled to run at specific times and frequencies (e.g., daily, hourly) using a CRON syntax interface or a user-friendly dropdown menu within the Jobs UI.
+
+4.Error handling
+Effective error handling is a key feature of Databricks Jobs for production readiness: 
+Retries: You can configure automatic retry policies for failed tasks, specifying the number of attempts and a back-off period.
+Alerts: Jobs can send email or webhooks notifications upon job completion, success, or failure, allowing immediate intervention.
+Logging: Detailed logs for each task run are generated and easily accessible for debugging failures [1]. The Databricks documentation on monitoring covers these features in depth. 
