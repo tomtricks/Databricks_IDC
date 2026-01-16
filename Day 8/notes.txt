@@ -1,0 +1,36 @@
+Unity Catalog Governance
+
+1. Catalog → Schema → Table hierarchy
+  
+Catalog: The top-level container used to organize data assets, often mirroring business units (e.g., finance, marketing) or environments (e.g., prod, dev).
+Schema: Also known as a database, this is the second layer used to group related tables, views, and functions.
+Table/Volume: The lowest level of the hierarchy where the actual data resides.
+
+2. Access Control (GRANT/REVOKE)
+Unity Catalog centralizes permissions using standard SQL syntax across all workspaces. 
+Hierarchical Inheritance: Permissions granted at a higher level automatically cascade down to lower levels. 
+For example, granting SELECT on a Catalog gives a user read access to all Schemas and Tables within that catalog.
+
+Syntax:
+GRANT <privilege> ON <object_type> <object_name> TO <principal>;
+REVOKE <privilege> ON <object_type> <object_name> FROM <principal>;
+Common Privileges: Include SELECT (read), MODIFY (write), USE CATALOG, and USE SCHEMA. 
+
+
+3. Data Lineage
+Unity Catalog automatically captures lineage at both the table and column levels. 
+Automatic Tracking: Captures data movement and transformations across notebooks, SQL queries, jobs, and dashboards without manual configuration.
+Visibility: Lineage can be viewed visually in Catalog Explorer or queried programmatically via system tables.
+Security Integration: Users only see lineage for objects they have permission to access.
+Cross-Workspace: Aggregates lineage across all workspaces attached to the same metastore. 
+
+
+4. Managed vs. External Tables
+The choice of table type determines who manages the underlying data files and their lifecycle. 
+
+Managed tables keep both data and metadata within Databricks-controlled storage, with data deleted when the table is dropped, ideal for simplicity and performance; 
+External tables store data in user-managed external storage (like S3/ADLS), so dropping the table only removes metadata, preserving the raw data for flexibility and control over storage costs, making them great for data lake scenarios. 
+  
+Managed tables are fully integrated and auto-optimized.
+while external tables offer manual control over data lifecycle outside Databricks.
+
