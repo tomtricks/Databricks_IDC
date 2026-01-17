@@ -1,0 +1,34 @@
+SQL Analytics & Dashboards
+
+
+1. SQL Warehouses
+SQL warehouses are the compute resources that execute SQL commands on data objects within Databricks. 
+Types:
+Serverless: Recommended for optimal price and performance; it scales instantly (2–6 seconds) and handles infrastructure management automatically.
+Pro: Supports all functionality including query federation and AI functions but requires manual management of the compute layer.
+Classic: Entry-level warehouse for basic data exploration.
+Performance: Warehouses utilize Photon, a vectorized query engine, and Predictive IO to accelerate selective scans and complex aggregations.
+
+2. Complex Analytical Queries
+Analysts use a native SQL editor to run queries directly against Delta Lake tables. 
+Capabilities: Supports ANSI SQL, complex joins, subqueries, and window functions.
+AI Functions: Users can leverage Large Language Models (LLMs) directly within SQL statements for tasks like sentiment analysis or data classification.
+Optimization: Results are cached per user or cluster to speed up repeat executions.
+
+3. Visualizations & Filters
+Visualizations transform raw query results into actionable insights within the dashboard canvas. 
+Visualization Types: Includes bar charts, scatter plots, heatmaps, sankey diagrams, and pivot tables.
+AI-Assisted Creation: Users can describe desired charts in natural language (e.g., "Show me a bar chart of average fare by hour") for the Databricks Assistant to generate automatically.
+Interactive Filters:
+Dashboard-level Filters: Can be added to the canvas as date pickers or dropdown menus to narrow data globally.
+Cross-filtering: Clicking a data point in one chart (e.g., a specific bar) automatically filters all other related visualizations on the same dataset.
+Parameters: Used in SQL code (e.g., WHERE zip = {{ zip_code }}) to dynamically re-run queries based on user input, saving on compute costs by limiting data scanned.
+
+
+4. Dashboard Creation
+Databricks AI/BI Dashboards (formerly Lakeview) are the standard for reporting in 2026; legacy dashboards are no longer directly accessible as of January 12, 2026. 
+Multi-page Reports: Editors can organize content into multiple pages to improve readability.
+Publishing & Sharing: Dashboards can be shared with anyone in the organization, even those without workspace access, using either the publisher's or the viewer's data permissions.
+Automation: Dashboards can be scheduled for automatic refresh, with snapshots sent via email or Slack to subscribers. 
+
+
