@@ -1,0 +1,28 @@
+Performance Optimization
+1. Query Execution Plans & Profiles
+Accessing Plans: Use .explain(mode="formatted") for a readable physical plan or the Query Profile in the SQL Warehouse UI to see a visual DAG with time spent per operator.
+Key Indicators:
+PartitionFilters: Confirms if partition pruning is working.
+Metadata skipping: Look for high percentages of files eliminated via min/max statistics.
+Shuffle volume: Monitor for large shuffles (e.g., >1GB per query), which indicate a need for better join strategies.
+
+2. Partitioning Strategies
+When to Partition: Databricks now recommends not partitioning tables under 1TB unless specific patterns require it.
+Column Selection: Choose low-cardinality columns (e.g., date, region) that results in partitions of at least 1GB each.
+Ingestion Time Clustering: For many workloads, using unpartitioned tables with Delta Lake's automatic ingestion-time clustering is preferred over manual partitioning.
+Liquid Clustering: As of 2026, Liquid Clustering (CLUSTER BY) is the recommended replacement for static partitioning and ZORDER in many scenarios, offering dynamic reorganization without rewriting the entire table.
+
+3. OPTIMIZE & ZORDER
+Compaction: Use OPTIMIZE table_name to merge small files (target size ~128MB to 1GB) into larger ones, reducing metadata overhead.
+Z-Ordering: Use ZORDER BY (col1, col2) on high-cardinality columns (e.g., customer_id, timestamp) frequently used in WHERE clauses or joins.
+Limit: Never use more than 4 columns for Z-Ordering, as effectiveness degrades.
+Frequency: Run regularly (daily or weekly) as a separate job cluster to maintain data locality
+
+4. Caching Techniques
+Disk Cache (formerly Delta Cache): Automatically stores copies of remote Parquet data on local SSDs of worker nodes. It is the most recommended caching method.
+Query Result Cache: Stores the final results of deterministic SQL queries. If the underlying data is unchanged, results are returned instantly from the cache.
+Spark Caching (.persist()): Use only for specific intermediate subquery results in iterative workloads (like ML); generally avoided in favor of the automatic Disk Cache.
+Predictive I/O: Available on Photon-enabled clusters, this automatically optimizes data scanning and pre-fetching based on past query patterns.
+
+
+
