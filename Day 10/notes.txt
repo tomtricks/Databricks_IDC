@@ -24,5 +24,6 @@ Query Result Cache: Stores the final results of deterministic SQL queries. If th
 Spark Caching (.persist()): Use only for specific intermediate subquery results in iterative workloads (like ML); generally avoided in favor of the automatic Disk Cache.
 Predictive I/O: Available on Photon-enabled clusters, this automatically optimizes data scanning and pre-fetching based on past query patterns.
 
+#DatabricksWithIDC
 
 
