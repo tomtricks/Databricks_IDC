@@ -1,0 +1,27 @@
+Statistical Analysis & ML Prep
+
+1. Descriptive Statistics
+Analysts use Databricks to summarize and visualize data distributions before modeling. 
+Lakehouse Monitoring: Automatically generates profiling data tables with metrics such as average, mean, and median for Delta tables in Unity Catalog.
+Notebook Visualizations: Built-in charting tools allow for quick exploration of data distributions and correlations using SQL or Python.
+PySpark/Pandas on Spark: Enables scalable calculation of standard deviations, quartiles, and frequency distributions on massive datasets. 
+
+2. Hypothesis Testing
+Databricks supports rigorous statistical testing to determine if data patterns are significant or due to chance. 
+Core Tests: Common implementations include Chi-squared tests for independence, T-tests for comparing means, and Z-tests when population variance is known.
+Libraries: Data scientists typically utilize scipy.stats or Spark’s MLlib for distributed statistical functions.
+Null Hypothesis (H₀): Used in Databricks projects to assume no significant difference (e.g., "A new model performs no better than the existing one") until proven otherwise by a p-value below a significance level (typically 0.05). 
+
+3. A/B Test Design
+A/B testing (or split testing) in Databricks compares a control version (A) against a variant (B) to measure impact on key metrics. 
+Experiment Setup: Populations are split into Control (no treatment) and Experiment groups.
+ML Model Selection: Often used to compare a new ML model against a production baseline using metrics like click-through rate or conversion.
+Tracking: MLflow integrated within Databricks logs parameters, metrics, and outcomes to compare test variations systematically. 
+
+4. Feature Engineering
+This process transforms raw data into high-quality inputs for ML models to improve accuracy. 
+Databricks Feature Store: A centralized repository to define, find, and reuse features across the organization, ensuring consistency between training and serving.
+Medallion Architecture: Data is incrementally cleaned and enriched as it moves from Bronze (raw) to Silver (transformed) and Gold (business-ready) layers.
+Automated Tools: Auto Loader and Delta Live Tables simplify the ingestion and transformation of complex data into engineered features at scale. 
+
+ @Databricks, @Codebasics  @indiandataclub #DatabricksWithIDC.
