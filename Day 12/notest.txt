@@ -1,0 +1,26 @@
+MLflow Basics
+
+Core MLflow Components
+MLflow Tracking: An API and UI for logging parameters, code versions, metrics, and artifacts during model training.
+MLflow Models: A standardized packaging format that allows models from any library (Scikit-learn, PyTorch, LangChain) to be used across diverse deployment tools.
+MLflow Model Registry: A centralized repository for managing model versions, lineage, and lifecycle transitions (e.g., from development to production). 
+
+Experiment Tracking & Logging
+Databricks uses Experiments as organizational units to group related Runs. 
+Automatic Logging: Databricks Autologging is enabled by default on ML Runtime clusters. It automatically captures model parameters, metrics, and files when you use supported libraries like Scikit-learn or XGBoost.
+Manual Logging: Use the mlflow.log_param(), mlflow.log_metric(), and mlflow.log_artifact() APIs for granular control.
+Model Logging: Models are saved using mlflow.<flavor>.log_model(). In MLflow 3, this creates a Logged Model object that links metrics and parameters directly to the model throughout its lifecycle. 
+
+MLflow UI in Databricks
+The UI provides a visual interface to manage and compare your work: 
+Experiment Page: Displays all runs within an experiment. You can compare runs side-by-side using charts and tables to identify the best-performing models.
+Run Details: Clicking a run shows its specific parameters, metrics, and the Artifacts section, which contains the logged model and automatically generated code snippets for loading it.
+Models Tab: In MLflow 3, this tab within the Experiment UI allows you to search and filter Logged Models based on metrics and tags across different environments. 
+
+Unity Catalog Integration (2026 Standard) 
+For enterprise governance, the Model Registry is now typically backed by Unity Catalog (databricks-uc). 
+Namespace: Models use a three-level namespace: <catalog>.<schema>.<model_name>.
+Lifecycle Management: Use Aliases (e.g., @champion, @challenger) instead of legacy "stages" to promote models to production.
+Lineage: Unity Catalog tracks lineage from the original training dataset and experiment run all the way to production serving.
+
+@Databricks, @Codebasics and @indiandataclub along with #DatabricksWithIDC.
