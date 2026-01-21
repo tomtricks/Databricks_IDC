@@ -17,10 +17,13 @@ Tree-Based Models: For models such as Random Forests or Gradient Boosting Machin
 SHAP: Databricks supports the use of SHAP (SHapley Additive exPlanations), a powerful library for model explainability that provides consistent and accurate feature importance values for a wide range of models.
 Databricks Runtime ML: Provides an optimized environment for running these interpretability libraries. 
 
-@Databricks, @Codebasics @indiandataclub #DatabricksWithIDC.
 
 Spark ML Pipelines
 Spark ML Pipelines provide a structured, unified API for defining and running entire machine learning workflows, ensuring consistency and reusability. 
 Stages: A pipeline chains together multiple stages (e.g., data preprocessing, feature engineering, model training), which execute sequentially.
 Transformers and Estimators: Pipelines are built from Transformers (feature manipulation tools) and Estimators (training algorithms), both of which accept DataFrames as input and output DataFrames, facilitating seamless data flow.
 Integration with Tuning: These pipelines are fully compatible with tuning tools like CrossValidator, which tunes the hyperparameters of the entire pipeline, not just the final model. 
+
+
+@Databricks, @Codebasics @indiandataclub #DatabricksWithIDC.
+
