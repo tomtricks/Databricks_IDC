@@ -1,0 +1,29 @@
+AI-Powered Analytics: Genie & Mosaic AI
+
+AI/BI Genie (Natural Language → SQL) 
+Genie is a conversational analytics interface that allows non-technical users to query enterprise data using natural language. 
+Mechanism: It functions as a Compound AI system, orchestrating multiple specialized agents to translate natural language into read-only SQL, execute it on a SQL warehouse, and return results.
+Genie Spaces: Domain experts curate "spaces" with specific datasets, sample queries, and text-based instructions to guide Genie’s logic.
+Trusted Assets: Authors can certify specific SQL functions or parameterized queries as "Trusted Assets," ensuring Genie uses verified logic for critical business metrics.
+Deep Research Mode: Introduced in late 2025, this mode handles complex, multi-step "why" and "how" questions by generating a research plan and testing multiple hypotheses in parallel. 
+
+Mosaic AI Capabilities
+Mosaic AI is the unified platform for building, deploying, and governing generative AI applications. 
+Model Training & Fine-Tuning: Provides high-performance environments to fine-tune open-source foundation models (like MPT or Falcon) on proprietary data.
+Agent Framework: A suite for developing "intelligent agents" that can reason, plan, and use tools (APIs, web search, or SQL) to execute complex tasks autonomously.
+AI Gateway: A centralized control layer for managing access, rate limits, and security guardrails (like PII filtering) across various model providers like OpenAI or Anthropic.
+Vector Search: Seamlessly integrated with Unity Catalog to automatically index unstructured data for RAG (Retrieval-Augmented Generation) applications. 
+
+Generative AI Integration
+AI is natively embedded throughout the Databricks ecosystem to enhance productivity. 
+Databricks Assistant: A side-pane AI that assists with writing code, fixing errors, and creating visualizations directly within notebooks and SQL editors.
+Lakeflow: A declarative framework that uses AI to simplify data engineering pipelines, ensuring the data fed into AI systems is fresh and reliable.
+Unity Catalog Integration: AI assets (models, agents, and tools) are governed with the same fine-grained permissions as traditional data tables, providing end-to-end lineage and auditability. 
+
+AI-Assisted Analysis
+Beyond basic querying, Databricks provides tools for sophisticated, automated insights. 
+Auto-Generated Documentation: AI scans Unity Catalog metadata to automatically generate comments and descriptions for tables and columns.
+Intelligent Search: An AI-powered search experience that understands business semantics to find relevant data assets across the entire organization.
+Agent Evaluation: Built-in tools for "AI-assisted evaluation" that use LLM judges to measure the quality and accuracy of AI agent responses before they reach production.
+
+@Databricks, @Codebasics  @indiandataclub  #DatabricksWithIDC
